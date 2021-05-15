@@ -1,10 +1,10 @@
 /**************************************************************************
-> File Name:     common.h
-> Author:        likeqiang
-> mail:          likeqiang2020@gmail.com 
-> Created Time:  2021年05月13日 星期四 15时33分54秒
-> Description:   
-*************************************************************************/
+	> File Name:     common.h
+	> Author:        likeqiang
+	> mail:          likeqiang2020@gmail.com 
+	> Created Time:  2021年05月13日 星期四 15时33分54秒
+	> Description:   
+ *************************************************************************/
 
 #ifndef EPOLL_H_
 #define EPOLL_H_ 
@@ -41,7 +41,6 @@ void addFd(int epollfd, int fd)
 {
 	struct epoll_event ev;
 	ev.data.fd = fd;
-	ev.events = EPOLLIN;
 	ev.events = EPOLLIN | EPOLLET;		// 设置为边缘触发
 	epoll_ctl(epollfd, EPOLL_CTL_ADD, fd, &ev);
 	setNonBlock(fd);
